@@ -94,11 +94,11 @@
 --ORDER BY continent,location
 
 --CREATING A VIEW TO STORE DATA FOR LATER
-CREATE VIEW PERCENT_POPULATION_VACCINATION AS
-SELECT CD.continent,CD.date, CD.location, CD.population, CV.new_vaccinations, SUM(CAST(CV.new_vaccinations as int)) OVER (Partition by CD.location ORDER BY CD.location, CD.date) as SUM_VACCINATED_PER_DAY
-FROM CovidDeaths$ CD
-JOIN CovidVaccinations$ CV
-	ON CD.location = CV.location
-	AND	CD.date =CV.date
+--CREATE VIEW PERCENT_POPULATION_VACCINATION AS
+--SELECT CD.continent,CD.date, CD.location, CD.population, CV.new_vaccinations, SUM(CAST(CV.new_vaccinations as int)) OVER (Partition by CD.location ORDER BY CD.location, CD.date) as SUM_VACCINATED_PER_DAY
+--FROM CovidDeaths$ CD
+--JOIN CovidVaccinations$ CV
+--	ON CD.location = CV.location
+--	AND	CD.date =CV.date
 --WHERE CD.continent IS NOT NULL
 --ORDER BY 2,3
